@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+  "name": "Certificate Inspector",
+  "version": "1.0.0",
+  "description": "Shows whether the active HTTPS site is trusted by a Firefox built-in root or by a local/system certificate authority.",
+  "permissions": [
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": [
+      "src/background.js"
+    ]
+  },
+  "browser_action": {
+    "default_title": "Certificate status unknown",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/neutral.svg",
+      "32": "icons/neutral.svg",
+      "48": "icons/neutral.svg",
+      "96": "icons/neutral.svg"
+    }
+  },
+  "icons": {
+    "48": "icons/trusted.svg",
+    "96": "icons/trusted.svg"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "certificate-inspector@example.local",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,163 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f7faf9;
+  --text: #16211f;
+  --muted: #5d6b68;
+  --panel: #ffffff;
+  --border: #d7e1de;
+  --trusted: #118768;
+  --local-trusted: #f2b705;
+  --problem: #c01f2f;
+  --neutral: #6b7280;
+  --shadow: 0 8px 22px rgba(12, 24, 21, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111817;
+    --text: #eef7f4;
+    --muted: #a9b8b4;
+    --panel: #17211f;
+    --border: #2d3c38;
+    --trusted: #41d6ad;
+    --local-trusted: #ffd24a;
+    --problem: #ff6b7b;
+    --neutral: #aab2bd;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 360px;
+  max-width: 460px;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.shell {
+  padding: 14px;
+}
+
+.status {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.status-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: block;
+}
+
+.eyebrow {
+  margin: 0 0 2px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.2;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+
+.reason {
+  margin: 12px 0;
+  padding: 10px 12px;
+  border-left: 3px solid var(--neutral);
+  background: color-mix(in srgb, var(--panel) 84%, var(--neutral));
+  border-radius: 6px;
+}
+
+.reason.public-trusted {
+  border-left-color: var(--trusted);
+}
+
+.reason.local-trusted {
+  border-left-color: var(--local-trusted);
+  background: color-mix(in srgb, var(--panel) 82%, var(--local-trusted));
+}
+
+.reason.problem {
+  border-left-color: var(--problem);
+  background: color-mix(in srgb, var(--panel) 82%, var(--problem));
+}
+
+.section {
+  margin-top: 10px;
+  padding: 12px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.details-section {
+  padding: 0;
+}
+
+.details-section summary {
+  cursor: pointer;
+  list-style-position: inside;
+  padding: 12px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.details-section summary:hover {
+  background: color-mix(in srgb, var(--panel) 88%, var(--border));
+}
+
+.details-content {
+  display: grid;
+  gap: 14px;
+  padding: 0 12px 12px;
+}
+
+.facts {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.facts div {
+  display: grid;
+  gap: 2px;
+}
+
+dt {
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.empty {
+  color: var(--muted);
+}
+

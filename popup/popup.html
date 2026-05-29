@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Certificate Inspector</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="status" id="status">
+        <img class="status-icon" id="status-icon" src="../icons/neutral.svg" alt="">
+        <div>
+          <p class="eyebrow" id="host">No active site</p>
+          <h1 id="classification">Certificate status unknown</h1>
+        </div>
+      </header>
+
+      <p class="reason" id="reason">Open an HTTPS page to inspect its certificate chain.</p>
+
+      <section class="section">
+        <h2>Certificate</h2>
+        <dl class="facts" id="summary"></dl>
+      </section>
+
+      <details class="section details-section">
+        <summary>More certificate details</summary>
+        <div class="details-content">
+          <h2>Connection</h2>
+          <dl class="facts" id="connection"></dl>
+
+          <section id="leaf-section" hidden>
+            <h2>Leaf Certificate</h2>
+            <dl class="facts" id="leaf"></dl>
+          </section>
+
+          <section id="root-section" hidden>
+            <h2>Root Certificate</h2>
+            <dl class="facts" id="root"></dl>
+          </section>
+        </div>
+      </details>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

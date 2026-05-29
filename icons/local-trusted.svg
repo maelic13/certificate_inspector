@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Local or system certificate trust">
+  <path fill="#f2b705" d="M48 2 88 16v30c0 25-16 39-40 48C24 85 8 71 8 46V16L48 2Z"/>
+  <path fill="#1f1600" d="M22 49c7-12 16-18 26-18s19 6 26 18c-7 12-16 18-26 18S29 61 22 49Zm26 10a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
+  <circle cx="48" cy="49" r="5" fill="#000"/>
+</svg>
